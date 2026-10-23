@@ -158,12 +158,14 @@ def launch_setup(context, *args, **kwargs):
     )
 
     # Gazebo nodes
+    # Gazebo nodes
     gazebo = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             [FindPackageShare("gazebo_ros"), "/launch", "/gazebo.launch.py"]
         ),
         launch_arguments={
             "gui": gazebo_gui,
+            "world": "/home/daniel_docker/ros2_ws/src/Universal_Robots_ROS2_Gazebo_Simulation/worlds/world.sdf",
         }.items(),
     )
 
